@@ -64,6 +64,6 @@
   //General colores solo cambiando un canal
   function generateRandomHSLAOneChannel(){
     color = "hsla("+parseInt(Math.random()*360, 10)+
-      ",50%,50%,0.5)";
+      ",100%,50%,0.2)";
     return color;
   }

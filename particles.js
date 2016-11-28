@@ -16,9 +16,11 @@ window.onload = function(){
   eraseCanvas();      
   
   setInterval(function(){
+    ctx.globalCompositeOperation = "source-over"; //Nice effect
     eraseCanvasWithTrails();
     createParticles(particleNum);
     
+    ctx.globalCompositeOperation = "lighter"; //Nice effect
     for(var i in particles){
       particles[i].draw();
     }        
@@ -33,7 +35,7 @@ window.onload = function(){
     this.vx = Math.random() * 10 - 5; //Random velocidad eje x
     this.vy = Math.random() * 10 - 5; //Random velocidad eje y
     this.gravity = 0.3;
-    this.color = generateRandomHSLATwoChannels();
+    this.color = generateRandomHSLAOneChannel();
     this.life = 0;
     this.maxLife = Math.random()*30+50; //Random vida de particula
     particleIndex++;
